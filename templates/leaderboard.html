@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href = "static/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; max-width:700px; margin:40px auto; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; }
+    th,td { padding:8px; border-bottom:1px solid #ddd; text-align:left; }
+  </style>
+</head>
+<body>
+  <h1>Leaderboard</h1>
+  {% if lb %}
+    <table>
+      <tr><th>#</th><th>Name</th><th>Score</th><th>Mode</th><th>Time</th></tr>
+      {% for i,e in loop.index(lb,1) %}
+        <tr><td>{{ i }}</td><td>{{ e.name }}</td><td>{{ e.score }}</td><td>{{ e.mode }}</td><td>{{ e.time }}</td></tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No scores yet.</p>
+  {% endif %}
+  <p><a href="/">Back to menu</a></p>
+</body>
+</html>

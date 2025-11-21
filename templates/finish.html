@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Result</title>
+  <link rel="stylesheet" href = "static/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; max-width:700px; margin:40px auto; }
+    .card { padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    {% if failed %}
+      <h2>Out of attempts!</h2>
+      <p>You couldn't guess the number this time.</p>
+      <p>Guesses used: {{ last.guesses }}</p>
+      <p>Score: {{ last.score }}</p>
+    {% else %}
+      <h2>🎉 You won!</h2>
+      <p>Guesses: {{ last.guesses }}</p>
+      <p>Score: {{ last.score }}</p>
+      {% if last.elapsed %}
+        <p>Time: {{ "%.2f"|format(last.elapsed) }} seconds</p>
+      {% endif %}
+      <form method="post">
+        <label>Your name for leaderboard: <input name="name" placeholder="Anonymous"></label>
+        <button type="submit">Save Score</button>
+      </form>
+    {% endif %}
+    <p><a href="/">Play again</a> • <a href="/python/app/templates/leaderboard.html">View Leaderboard</a></p>
+  </div>
+</body>
+</html>

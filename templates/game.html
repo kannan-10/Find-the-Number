@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Number Guess — Play</title>
+  <link rel ="stylesheet" href="static/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; max-width:700px; margin:40px auto; }
+    .card { padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <h2>Guess the number</h2>
+    <p class="small">Current allowed range: <span class="game-range">{{ low_bound }} - {{ high_bound }}</span></p>
+    <p class="small">Guesses used: {{ guesses }} {% if attempts %}/ {{ attempts }}{% endif %}</p>
+
+    {% if message %}
+      <div class="msg">{{ message }}</div>
+    {% endif %}
+
+    <form method="post" class="mt-8">
+      <div class="guess-row">
+        <input name="guess" placeholder="Enter guess" autofocus>
+        <button class="button" type="submit">Submit</button>
+      </div>
+    </form>
+
+    <div class="links mt-8">
+      <a href="/">Back to menu</a> • <a href="/leaderboard">Leaderboard</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

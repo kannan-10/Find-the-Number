@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Number Guess — Start</title>
+  <link rel="stylesheet" href = "static/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; max-width:700px; margin:40px auto; }
+    .card { padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    label { display:block; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+  <div class="container">
+    <h1>Number Guess Game</h1>
+    <form method="post" action="/start">
+      <div class="form-now">
+      <label>Mode:
+        <select name="mode">
+          <option value="classic">Classic</option>
+          <option value="limited">Limited</option>
+          <option value="hint">Hint</option>
+          <option value="timed">Timed</option>
+        </select>
+      </label>
+      <label>Lowest: <input type="number" name="lowest" value="1"></label>
+      <label>Highest: <input type="number" name="highest" value="100"></label>
+    </div>
+
+    <div class="from-row">
+      <label>Attempts (leave blank for unlimited): <input type="number" name="attempts"></label>
+      <label><input type="checkbox" name="hint"> Enable Hint Mode</label>
+      <label><input type="checkbox" name="timer"> Enable Timer Mode</label>
+    </div>  
+    <div class="mt-16">
+      <button class="button" type="submit">Start Game</button>
+      <a class = "button secondary" href="leaderboard.html">View Leaderboard</a></p>
+  </div>
+</form>
+</div>
+</div>
+</body>
+</html>

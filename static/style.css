@@ -1,0 +1,181 @@
+/* static/style.css */
+
+/* --- Basic reset & typography --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg, #f6f9fc 0%, #eef5fb 100%);
+  color: #1b2635;
+  line-height: 1.5;
+  padding: 24px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Page container --- */
+.container {
+  max-width: 860px;
+  margin: 28px auto;
+  padding: 20px;
+}
+
+/* --- Card style used across pages --- */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(21, 32, 50, 0.06);
+  border: 1px solid rgba(20,30,40,0.04);
+}
+
+/* --- Headings --- */
+h1, h2 {
+  color: #0f1724;
+}
+h1 { font-size: 1.9rem; margin-bottom: 8px; }
+h2 { font-size: 1.25rem; margin-bottom: 10px; }
+
+/* --- Form layout --- */
+.form-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+label { font-size: 0.95rem; color: #354155; }
+input[type="text"],
+input[type="number"],
+select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(20,30,40,0.08);
+  background: #fbfdff;
+  outline: none;
+  min-width: 160px;
+  transition: box-shadow .15s ease, transform .06s ease;
+}
+input:focus, select:focus {
+  box-shadow: 0 6px 18px rgba(14, 113, 216, 0.08);
+  border-color: rgba(14,113,216,0.6);
+  transform: translateY(-1px);
+}
+
+/* --- Buttons --- */
+.button {
+  display: inline-block;
+  background: linear-gradient(90deg,#0b84ff,#2bb6ff);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(11,132,255,0.12);
+  transition: transform .12s ease, opacity .12s ease;
+}
+.button:hover { transform: translateY(-3px); opacity: 0.98; }
+.button.secondary {
+  background: transparent;
+  color: #0f1724;
+  border: 1px solid rgba(20,30,40,0.06);
+  box-shadow: none;
+}
+
+/* --- Small text and hints --- */
+.small {
+  font-size: 0.88rem;
+  color: #52606d;
+}
+
+/* --- Game area --- */
+.game-range {
+  font-weight: 700;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: linear-gradient(180deg,#f4fbff,#eef9ff);
+  border: 1px dashed rgba(11,132,255,0.12);
+}
+
+/* --- Message badges --- */
+.msg {
+  padding: 10px 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  display: inline-block;
+  color: #06304a;
+  background: #e6f5ff;
+  border: 1px solid rgba(11,132,255,0.08);
+}
+
+/* --- Attempts info --- */
+.info-row {
+  margin-top: 12px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* --- Inputs group for guess --- */
+.guess-row {
+  display:flex;
+  gap:8px;
+  margin-top: 12px;
+  align-items:center;
+}
+.guess-row input {
+  flex: 1 1 160px;
+}
+
+/* --- Leaderboard table --- */
+.table-wrap {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+}
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(20,30,40,0.04);
+  font-size: 0.95rem;
+}
+th {
+  background: rgba(11,132,255,0.03);
+  font-weight: 700;
+}
+tr:hover td {
+  background: rgba(11,132,255,0.02);
+}
+
+/* --- Footer links --- */
+.links {
+  margin-top: 14px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.links a {
+  text-decoration: none;
+  color: #0b84ff;
+  font-weight: 600;
+}
+
+/* --- Responsive tweaks --- */
+@media (max-width: 640px) {
+  .container { padding: 12px; }
+  .form-row { flex-direction: column; align-items: stretch; }
+  .guess-row { flex-direction: column; align-items: stretch; }
+  h1 { font-size: 1.5rem; }
+}
+
+/* --- Small utility classes --- */
+.center { text-align:center; }
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.bold { font-weight:700; }
